@@ -32,12 +32,12 @@ export default {
 @header-height: 64px;
 
 /*尾部样式定义*/
-@footer-height: 64px;
+@footer-height: 32px;
 @footer-bc: #ccc;
 
 /*内容样式定义*/
 @content-bc: #bbb;
-@content-height: calc(100vh - (@header-height + @footer-height));
+@content-height: @header-height + @footer-height;
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -71,7 +71,7 @@ export default {
     }
     .content {
       width: 100%;
-      height: @content-height;
+      height: calc(100vh - @content-height);
       overflow: auto;
       background-color: @content-bc;
       margin-top: @header-height;
