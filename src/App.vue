@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+    <div class="left">菜单</div>
 
-    <div class="content" new></div>
-
-    jjjj
+    <div class="content">测试</div>
   </div>
 </template>
 
@@ -20,21 +19,37 @@ export default {
 </script>
 
 <style lang="less">
+@menu-bc: #aaa;
+@content-bc: #bbb;
+@header-bc: #ccc;
+
+@menu-width: 100px;
+@header-height: 64px;
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   background-color: red;
+  display: flex;
 
   width: 100%;
-  margin-top: 200px;
-  height: calc(100vh - 200px);
+  height: calc(100vh);
 
   .content {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: calc(100vh - @header-height);
+    overflow: auto;
+    background-color: @content-bc;
+    margin-top: @header-height;
+  }
+
+  .left {
+    max-width: @menu-width;
+    min-width: @menu-width;
+    display: flex;
+    height: calc(100vh);
+    overflow: auto;
+    background-color: @menu-bc;
   }
 }
 </style>
