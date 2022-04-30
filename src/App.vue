@@ -3,7 +3,11 @@
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <div class="left">菜单</div>
 
-    <div class="content">测试</div>
+    <div class="right">
+      <div class="header">头部</div>
+      <div class="content">内容</div>
+      <div class="footer">尾部</div>
+    </div>
   </div>
 </template>
 
@@ -19,12 +23,21 @@ export default {
 </script>
 
 <style lang="less">
+/*菜单样式定义*/
 @menu-bc: #aaa;
-@content-bc: #bbb;
-@header-bc: #ccc;
-
 @menu-width: 100px;
+
+/*头部样式定义*/
+@header-bc: #ccc;
 @header-height: 64px;
+
+/*尾部样式定义*/
+@footer-height: 64px;
+@footer-bc: #ccc;
+
+/*内容样式定义*/
+@content-bc: #bbb;
+@content-height: calc(100vh - (@header-height + @footer-height));
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -35,14 +48,6 @@ export default {
   width: 100%;
   height: calc(100vh);
 
-  .content {
-    width: 100%;
-    height: calc(100vh - @header-height);
-    overflow: auto;
-    background-color: @content-bc;
-    margin-top: @header-height;
-  }
-
   .left {
     max-width: @menu-width;
     min-width: @menu-width;
@@ -50,6 +55,34 @@ export default {
     height: calc(100vh);
     overflow: auto;
     background-color: @menu-bc;
+  }
+
+  .right {
+    width: 100%;
+    height: calc(100vh);
+    overflow: auto;
+    background-color: @content-bc;
+
+    .header {
+      width: 100%;
+      height: @header-height;
+      color: blue;
+      background-color: @header-bc;
+    }
+    .content {
+      width: 100%;
+      height: @content-height;
+      overflow: auto;
+      background-color: @content-bc;
+      margin-top: @header-height;
+    }
+    .footer {
+      width: 100%;
+      height: @footer-height;
+      color: blue;
+      text-algin: center;
+      background-color: @footer-bc;
+    }
   }
 }
 </style>
