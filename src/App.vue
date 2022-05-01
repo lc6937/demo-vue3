@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <div class="left">菜单</div>
-
     <div class="right">
       <div class="header">头部</div>
       <div class="content">内容</div>
@@ -55,6 +53,7 @@ export default {
     height: calc(100vh);
     overflow: auto;
     background-color: @menu-bc;
+    border-left: 1px soid #777;
   }
 
   .right {
@@ -68,19 +67,20 @@ export default {
       height: @header-height;
       color: blue;
       background-color: @header-bc;
+
+      overflow: auto;
     }
     .content {
       width: 100%;
       height: calc(100vh - @content-height);
-      overflow: auto;
       background-color: @content-bc;
-      margin-top: @header-height;
+      overflow: auto;
     }
     .footer {
       width: 100%;
       height: @footer-height;
       color: blue;
-      text-algin: center;
+      text-align: center;
       background-color: @footer-bc;
     }
   }
